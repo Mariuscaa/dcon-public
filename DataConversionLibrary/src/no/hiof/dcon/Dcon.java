@@ -24,7 +24,6 @@ public class Dcon {
     }
 
     // Json
-
     public String deserializeJson(String fileName, Class className) {
         return null;
     }
