@@ -121,7 +121,7 @@ public class Dcon {
     /**
      *
      * parseJsonToDcon() is the static method that will parse the JSON string and create a Dcon object using the Dcon.parseToObject() method.
-     *
+     * @param jsonString this represents the JSON string to be parsed into a DconObject.
      * @return
      */
     public DconObject parseJsonStringToDconObject(String jsonString) {
@@ -132,7 +132,7 @@ public class Dcon {
 
     /**
      * "serializeToJSON() is the static method that will serialize the Dcon object to a JSON string using the builder.Serialize() method.
-     * @param dconObject
+     * @param dconObject this is represents the data to be serialized to JSON.
      * @return
      */
     public String serializeToJSON(DconObject dconObject){
@@ -146,7 +146,7 @@ public class Dcon {
      * /**
      * "createDconJSONList() is the static method that will create a DconJSONList object.
      * The method takes an ArrayList of String objects as a parameter.
-     * @param list
+     * @param "listlist" - an "ArrayList" that represents the list of elements to be converted to a DconList object.
      * @return
      */
     public static DconList createDconListFromArrayList(ArrayList<String> list){
@@ -158,7 +158,7 @@ public class Dcon {
      * /**
      * serializeDcon() is the static method that will serialize a Dcon object using the Dcon.JsonSerializer().serialize() method.
      *
-     * @param dconObject
+     * @param dconObject this represents the data to be serialized to XML.
      * @return
      */
     public static String serializeToXml(DconObject dconObject){
@@ -178,6 +178,7 @@ public class Dcon {
     /**
      *This code defines a public static method named convertJsonFileToList that takes a String parameter
      * named filename and returns a value of type DconList.
+     * which is a list-like data structure used by the Dcon framework.
      * @param filename
      * @return
      */
@@ -189,7 +190,7 @@ public class Dcon {
     /**
      * The method should take a single parameter of type String,
      * which will represent the JSON string to be deserialized
-     * @param jsonString
+     * @param jsonString It represents a JSON array to be deserialized.
      * @return
      */
     public static DconList deserializeJsonStringToList(String jsonString){
@@ -200,10 +201,10 @@ public class Dcon {
     /**
      * In this method, you can create a new JSONObject and populate it
      * with the data for the specified gender category.
-     * @param gender
+     * @param typeOfCategory It represents the type of category for which a JSON object is requested.
      * @return
      */
-    public static String getJSONObject(String gender){
+    public static String getJSONObject(String typeOfCategory){
         return null;
     }
 
@@ -211,7 +212,7 @@ public class Dcon {
     /**
      * In this method, create a new DocumentBuilder object
      * and use it to parse the XML content into a Document object.
-     * @param xmlContent
+     * @param xmlContent It represents the XML content to be parsed.
      * @return
      */
     public static Document parseXml(String xmlContent){
@@ -222,7 +223,7 @@ public class Dcon {
     /**
      * In this method, create a new DocumentBuilder object and use it
      * to parse the input XML file into a Document object.
-     * @param inputFile
+     * @param inputFile It represents the path to the input XML file.
      * @return
      */
     public static Document readXml(String inputFile){
@@ -242,7 +243,7 @@ public class Dcon {
 
     /**
      * in this method, create a new JAXBContext object for the specified class.
-     * @param type
+     * @param type It represents the type of object that will be unmarshalled.
      * @return
      */
     public static Dcon createUnmarshaller(Class<?> type){
@@ -253,8 +254,8 @@ public class Dcon {
     /**
      * in this method, call the getElementsByTagName method of the Document object,
      * passing in the tag name as the argument.
-     * @param doc
-     * @param tagName
+     * @param doc that represents an HTML or XML document.
+     * @param tagName represents the name of the tag to search for in the document.
      * @return
      */
     public static String getElementsByTag(Document doc, String tagName){

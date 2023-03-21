@@ -7,6 +7,7 @@ public class DconFactory {
      * @return      a Dcon object.
      */
     public static Dcon create() {
+
         return new Dcon();
     }
 
