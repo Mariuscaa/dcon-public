@@ -117,6 +117,7 @@ public class Dcon {
         return null;
     }
 
+
     /**
      *
      * parseJsonToDcon() is the static method that will parse the JSON string and create a Dcon object using the Dcon.parseToObject() method.
@@ -124,111 +125,152 @@ public class Dcon {
      * @return
      */
     public DconObject parseJsonStringToDconObject(String jsonString) {
+
         return new DconObject();
     } // keep
 
 
+    /**
+     * "serializeToJSON() is the static method that will serialize the Dcon object to a JSON string using the builder.Serialize() method.
+     * @param dconObject
+     * @return
+     */
     public String serializeToJSON(DconObject dconObject){
-        /**
-         * "serializeToJSON() is the static method that will serialize the Dcon object to a JSON string using the builder.Serialize() method.
-         */
+
         String jsonString = null;
         return jsonString;
     } // keep
 
+
+    /**
+     * /**
+     * "createDconJSONList() is the static method that will create a DconJSONList object.
+     * The method takes an ArrayList of String objects as a parameter.
+     * @param list
+     * @return
+     */
     public static DconList createDconListFromArrayList(ArrayList<String> list){
-        /**
-         * "createDconJSONList() is the static method that will create a DconJSONList object.
-         * The method takes an ArrayList of String objects as a parameter.
-         */
         return new DconList();
     } // maybe?
 
+
+    /**
+     * /**
+     * serializeDcon() is the static method that will serialize a Dcon object using the Dcon.JsonSerializer().serialize() method.
+     *
+     * @param dconObject
+     * @return
+     */
     public static String serializeToXml(DconObject dconObject){
-        /**
-         * serializeDcon() is the static method that will serialize a Dcon object using the Dcon.JsonSerializer().serialize() method.
-         */
         return null;
     } // keep
 
+
+    /**
+     * "createDconArrayList() is the static method that will create an ArrayList object of Dcon objects using the Dcon.ArrayList<>() method.
+     * @return
+     */
     public static ArrayList<Dcon> createDconArrayList(){
-        /**
-         * "createDconArrayList() is the static method that will create an ArrayList object of Dcon objects using the Dcon.ArrayList<>() method.
-         */
         return new ArrayList<>();
     } // maybe?
 
+
     /**
-     *
+     *This code defines a public static method named convertJsonFileToList that takes a String parameter
+     * named filename and returns a value of type DconList.
      * @param filename
      * @return
      */
     public static DconList convertJsonFileToList(String filename){
-
         return null;
     } // keep
 
+
+    /**
+     * The method should take a single parameter of type String,
+     * which will represent the JSON string to be deserialized
+     * @param jsonString
+     * @return
+     */
     public static DconList deserializeJsonStringToList(String jsonString){
-        /**
-         * The method should take a single parameter of type String,
-         * which will represent the JSON string to be deserialized
-         */
         return null;
     } // keep
 
+
+    /**
+     * In this method, you can create a new JSONObject and populate it
+     * with the data for the specified gender category.
+     * @param gender
+     * @return
+     */
     public static String getJSONObject(String gender){
-        /**
-         * In this method, you can create a new JSONObject and populate it
-         * with the data for the specified gender category.
-         */
         return null;
     }
 
+
+    /**
+     * In this method, create a new DocumentBuilder object
+     * and use it to parse the XML content into a Document object.
+     * @param xmlContent
+     * @return
+     */
     public static Document parseXml(String xmlContent){
-        /**
-         * In this method, create a new DocumentBuilder object
-         * and use it to parse the XML content into a Document object
-         */
         return null;
     }
 
+
+    /**
+     * In this method, create a new DocumentBuilder object and use it
+     * to parse the input XML file into a Document object.
+     * @param inputFile
+     * @return
+     */
     public static Document readXml(String inputFile){
-        /**
-         *  In this method, create a new DocumentBuilder object and use it
-         *  to parse the input XML file into a Document object.
-         */
         return null;
     }
 
+
+    /**
+     * in this method, use Java reflection to create a new instance of
+     * the Person class using the default constructor.
+     * @return
+     */
     public static  String createPerson(){
-        /**
-         * in this method, use Java reflection to create a new instance of
-         * the Person class using the default constructor.
-         */
         return null;
     }
 
+
+    /**
+     * in this method, create a new JAXBContext object for the specified class.
+     * @param type
+     * @return
+     */
     public static Dcon createUnmarshaller(Class<?> type){
-        /**
-         * in this method, create a new JAXBContext object for the specified class.
-         */
         return null;
     }
 
+
+    /**
+     * in this method, call the getElementsByTagName method of the Document object,
+     * passing in the tag name as the argument.
+     * @param doc
+     * @param tagName
+     * @return
+     */
     public static String getElementsByTag(Document doc, String tagName){
-        /**
-         * in this method, call the getElementsByTagName method of the Document object,
-         * passing in the tag name as the argument.
-         */
         return null;
     }
 
+
+    /**
+     * in this method, create a new instance of the StringBuilder class and return it
+     * @return
+     */
     public static StringBuilder createStringBuilder() {
-        /**
-         * in this method, create a new instance of the StringBuilder class and return it
-         */
         return new StringBuilder();
     }
+
+
     /**
      * in this method, call the toDconString method of the DconValue class and pass in the object as a parameter.
      */

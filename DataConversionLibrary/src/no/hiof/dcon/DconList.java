@@ -5,10 +5,11 @@ public class DconList {
     }
 
 
+    /**
+     * in this method, create a new instance of the List class and assign it to a variable.
+     * @return
+     */
     public static  DconList createJsonList() {
-        /**
-         * in this method, create a new instance of the List class and assign it to a variable.
-         */
         return null;
     }
 }
