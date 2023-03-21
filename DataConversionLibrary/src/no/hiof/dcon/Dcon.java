@@ -9,13 +9,15 @@ import java.util.ArrayList;
  * A general class which has many methods for dataconversion with both Json And Xml.
  */
 public class Dcon {
+    protected Dcon() {
+    }
+    
     /**
      *  Reads a provided file and turns the result into a string.
-     *  filename A string with the full name of a file. For example "file.txt"
-     *  A string with the contents of the file.
+     *  @param  filename  A string with the full name of a file. For example "file.txt"
+     *  @return           A string with the contents of the file.
      */
-
-    public String readFileAsString(String filetxt) {
+    public static String readFileAsString(String filename) {
         return null;
     }
 
