@@ -7,12 +7,7 @@ public class Dcon {
     protected Dcon() {
     }
 
-    /**
-     * Reads a provided file and turns the result into a string.
-     * @param filename  A string with the full name of a file. For example "file.txt"
-     * @return A string with the contents of the file.
-     */
-    public String readFileAsString(String filename) {
+    public static String readFileAsString(String filename) {
         return null;
     }
 
