@@ -8,4 +8,12 @@ public class DconFactory {
     public static Dcon create() {
         return new Dcon();
     }
+
+    public static DconFactory createInstance() {
+        /**
+         * in this method, call the newInstance method of the DconFactory class to
+         * create a new instance of the factory.
+         */
+        return null;
+    }
 }
