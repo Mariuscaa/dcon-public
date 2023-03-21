@@ -122,7 +122,7 @@ public class Dcon {
      *
      * parseJsonToDcon() is the static method that will parse the JSON string and create a Dcon object using the Dcon.parseToObject() method.
      * @param jsonString this represents the JSON string to be parsed into a DconObject.
-     * @return
+     * @return it till return new instance of the DconObject class.("an instance is a unique object that is created based on that blueprint")
      */
     public DconObject parseJsonStringToDconObject(String jsonString) {
 
@@ -133,7 +133,7 @@ public class Dcon {
     /**
      * "serializeToJSON() is the static method that will serialize the Dcon object to a JSON string using the builder.Serialize() method.
      * @param dconObject this is represents the data to be serialized to JSON.
-     * @return
+     * @return It return a JSON string representation of the input object.
      */
     public String serializeToJSON(DconObject dconObject){
 
@@ -147,7 +147,8 @@ public class Dcon {
      * "createDconJSONList() is the static method that will create a DconJSONList object.
      * The method takes an ArrayList of String objects as a parameter.
      * @param "listlist" - an "ArrayList" that represents the list of elements to be converted to a DconList object.
-     * @return
+     * @return The createDconListFromArrayList method takes an ArrayList of String objects as input,
+     * and returns a new instance of the DconList class.
      */
     public static DconList createDconListFromArrayList(ArrayList<String> list){
         return new DconList();
@@ -159,7 +160,7 @@ public class Dcon {
      * serializeDcon() is the static method that will serialize a Dcon object using the Dcon.JsonSerializer().serialize() method.
      *
      * @param dconObject this represents the data to be serialized to XML.
-     * @return
+     * @return It is intended to return an XML string representation of the input object.
      */
     public static String serializeToXml(DconObject dconObject){
         return null;
@@ -168,7 +169,8 @@ public class Dcon {
 
     /**
      * "createDconArrayList() is the static method that will create an ArrayList object of Dcon objects using the Dcon.ArrayList<>() method.
-     * @return
+     * @return It will return a new instance of the ArrayList class, which is a built-in Java class that
+     * represents a dynamically resizable array of objects.
      */
     public static ArrayList<Dcon> createDconArrayList(){
         return new ArrayList<>();
@@ -180,7 +182,7 @@ public class Dcon {
      * named filename and returns a value of type DconList.
      * which is a list-like data structure used by the Dcon framework.
      * @param filename
-     * @return
+     * @return Return the converted DconList object.
      */
     public static DconList convertJsonFileToList(String filename){
         return null;
@@ -191,7 +193,8 @@ public class Dcon {
      * The method should take a single parameter of type String,
      * which will represent the JSON string to be deserialized
      * @param jsonString It represents a JSON array to be deserialized.
-     * @return
+     * @return  Return the newly created DconList object. After Parse the JSON string into a JSON object using a JSON parsing library.
+     * Extract the relevant information from the JSON object. Create a new DconList object with the extracted information.
      */
     public static DconList deserializeJsonStringToList(String jsonString){
         return null;
@@ -201,21 +204,10 @@ public class Dcon {
     /**
      * In this method, you can create a new JSONObject and populate it
      * with the data for the specified gender category.
-     * @param typeOfCategory It represents the type of category for which a JSON object is requested.
-     * @return
+     * @param dconObject It represents the type of category for which a JSON object is requested.
+     * @return It is return JSON string can be returned by the getJSONObject method.
      */
-    public static String getJSONObject(String typeOfCategory){
-        return null;
-    }
-
-
-    /**
-     * In this method, create a new DocumentBuilder object
-     * and use it to parse the XML content into a Document object.
-     * @param xmlContent It represents the XML content to be parsed.
-     * @return
-     */
-    public static Document parseXml(String xmlContent){
+    public static String getJSONObject(DconObject dconObject){
         return null;
     }
 
@@ -224,31 +216,11 @@ public class Dcon {
      * In this method, create a new DocumentBuilder object and use it
      * to parse the input XML file into a Document object.
      * @param inputFile It represents the path to the input XML file.
-     * @return
+     * @return the Document object can be returned by the readXml method.
      */
     public static Document readXml(String inputFile){
         return null;
-    }
-
-
-    /**
-     * in this method, use Java reflection to create a new instance of
-     * the Person class using the default constructor.
-     * @return
-     */
-    public static  String createPerson(){
-        return null;
-    }
-
-
-    /**
-     * in this method, create a new JAXBContext object for the specified class.
-     * @param type It represents the type of object that will be unmarshalled.
-     * @return
-     */
-    public static Dcon createUnmarshaller(Class<?> type){
-        return null;
-    }
+    }//think about it
 
 
     /**
@@ -256,24 +228,17 @@ public class Dcon {
      * passing in the tag name as the argument.
      * @param doc that represents an HTML or XML document.
      * @param tagName represents the name of the tag to search for in the document.
-     * @return
+     * @return The result string can be returned by the getElementsByTag method.
      */
     public static String getElementsByTag(Document doc, String tagName){
         return null;
     }
 
 
-    /**
-     * in this method, create a new instance of the StringBuilder class and return it
-     * @return
-     */
-    public static StringBuilder createStringBuilder() {
-        return new StringBuilder();
-    }
-
 
     /**
      * in this method, call the toDconString method of the DconValue class and pass in the object as a parameter.
+     * @return The resulting string can then be returned by the convertToDconString method.
      */
     public static String convertToDconString(Object obj) {
 
