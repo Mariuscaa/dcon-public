@@ -14,12 +14,12 @@ public class DconObject {
     public void put(String keyName, String value) {
     }
 
-    public static JsonObject create(String response){
+    public static String create(String response){
         /**
          * In this method, you can use a JSON library like Gson or Jackson to
          * create a new JSON object from the response string.
          */
-        return jsonObject;
+        return null;
     }
 
 

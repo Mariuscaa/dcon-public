@@ -8,38 +8,31 @@ public class WebScraper {
         return null;
     }
 
-    public static Gson createJsonParser(){
+    public static String createJsonParser(){
         /**
          *  on this JSON parsing library you want to use, you can choose to
          *  implement the method using Gson, Jackson or any other library of your choice.
          */
-        return DconFactory.JsonParser(new Gson/Jackson());
+        return null;
     }
 
-    public Webscraper build() {
+    public String Webscraper(String ulr) {
         /**
          * The class has a public constructor to initialize the URL
          * and a public method named "uri" to set the URL.
          * The "uri" method returns the instance of the builder so that you can chain
          * method calls
          */
-        return new Webscraper(this.url);
+        return null;
     }
 
-    public static MyData consumeWebAPI(String url){
+    public static String consumeWebAPI(String url){
         /**
          * In this method, you can use a library like Apache HttpClient or
          * Java HttpURLConnection to make a HTTP request to the API URL and retrieve
          * the response.
          */
-        return data;
+        return null;
     }
 
-    public static CatFact parse(String jsonString){
-        /**
-         * In this method, you can use a JSON parsing library like Gson or
-         * Jackson to convert the input JSON into a CatFact object.
-         */
-        return fact;
-    }
 }
