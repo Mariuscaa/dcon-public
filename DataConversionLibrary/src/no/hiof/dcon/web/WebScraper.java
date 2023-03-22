@@ -1,10 +1,19 @@
+/**
+ * Contains web related classes. For example useful for web API or web scraping.
+ */
 package no.hiof.dcon.web;
 
+/**
+ * Webscraper is a class which is specialized in scraping webpages and handling the data with either Json or Xml.
+ */
 public class WebScraper {
-    public WebScraper() {
-    }
 
-    public String scrape(String url) {
+    /**
+     * Scrapes an entire website and returns the data in Json format.
+     * @param url   A string with the URL for the website to scrape.
+     * @return      Returns a string with json format.
+     */
+    public static String scrapeAsJson(String url) {
         return null;
     }
 
@@ -25,9 +34,8 @@ public class WebScraper {
      * @param url   This represents the URL of the web page to scrape.
      * @return      It is intended to scrape web data from the given URL and return it.
      */
-    public String Webscraper(String url) {
+    public static String Webscraper(String url) {
         return null;
     }
-
 
 }
