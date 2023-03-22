@@ -21,7 +21,7 @@ public class Dcon {
      *  @param  filename  A string with the full name of a file. For example "file.txt".
      *  @return           A string with the contents of the file.
      */
-    public static String readFileAsString(String filename) {
+    public String readFileAsString(String filename) {
         return null;
     }
 
@@ -32,7 +32,7 @@ public class Dcon {
      * @param value2    The Second value to look for, if the first one exists.
      * @return          True or false, depending on whether both the values were found.
      */
-    public static boolean isBothInSameObject(DconList list, String value1, String value2) {
+    public boolean isBothInSameObject(DconList list, String value1, String value2) {
         return false;
     }
 
@@ -61,7 +61,7 @@ public class Dcon {
      * @return      The createDconListFromArrayList method takes an ArrayList of String objects as input,
      *              and returns a new instance of the DconList class.
      */
-    public static DconList createDconListFromArrayList(ArrayList<String> list){
+    public DconList createDconListFromArrayList(ArrayList<String> list){
         return null;
     } // maybe?
 
@@ -112,7 +112,7 @@ public class Dcon {
      * @param filename  A string with the full name of a file. For example "file.txt"
      * @return          Return the converted DconList object.
      */
-    public static DconList deserializeJsonFileToDconList(String filename){
+    public DconList deserializeJsonFileToDconList(String filename){
         return null;
     } // keep
 
@@ -123,7 +123,7 @@ public class Dcon {
      * @return              Return the newly created DconList object. After Parse the JSON string into a JSON object using a JSON parsing library.
      *                      Extract the relevant information from the JSON object. Create a new DconList object with the extracted information.
      */
-    public static DconList deserializeJsonStringToDconList(String jsonString){
+    public DconList deserializeJsonStringToDconList(String jsonString){
         return null;
     } // keep
 
@@ -132,7 +132,7 @@ public class Dcon {
      * @param fileName  The name of the file you want to validate.
      * @return          true or false, depending on whether the file was valid or not.
      */
-    public static boolean validateJson(String fileName){
+    public boolean validateJson(String fileName){
         return false;
     }
 
@@ -151,7 +151,7 @@ public class Dcon {
      * @param dconObject    This represents the data to be serialized to JSON.
      * @return              It return a JSON string representation of the input object.
      */
-    public static String convertDconObjectToJsonString(DconObject dconObject){
+    public String convertDconObjectToJsonString(DconObject dconObject){
         return null;
     }
 
@@ -160,7 +160,7 @@ public class Dcon {
      * @param fileName      A string with the desired name of the output file.
      * @param dconObject    It represents the type of category for which a JSON object is requested.
      */
-    public static void writeDconObjectToJsonFile(String fileName, DconObject dconObject){
+    public void writeDconObjectToJsonFile(String fileName, DconObject dconObject){
     }
 
     /**
@@ -168,7 +168,7 @@ public class Dcon {
      * @param fileName  A string with the name of the file you want to create.
      * @param object    The object with the data you want to write out.
      */
-    public static void writeObjectToJsonFile(String fileName, Object object){
+    public void writeObjectToJsonFile(String fileName, Object object){
     }
 
     // XML
@@ -180,7 +180,7 @@ public class Dcon {
      * @return          An object of the given class.
      * @param <T>       The class which shall be deserialized into.
      */
-    public static <T> T deserializeXmlToObject(String fileName, Class<T> clazz) {
+    public <T> T deserializeXmlToObject(String fileName, Class<T> clazz) {
         return null;
     }
 
@@ -220,11 +220,11 @@ public class Dcon {
     }
 
     /**
-     * serializeDcon() is the static method that will serialize a Dcon object using the Dcon.JsonSerializer().serialize() method.
+     * serializeDcon() is a method that will serialize a Dcon object using the Dcon.JsonSerializer().serialize() method.
      * @param dconObject    This represents the data to be serialized to XML.
      * @return              It is intended to return an XML string representation of the input object.
      */
-    public static String serializeDconObjectToXmlString(DconObject dconObject){
+    public String serializeDconObjectToXmlString(DconObject dconObject){
         return null;
     }
 
@@ -234,7 +234,7 @@ public class Dcon {
      * @param inputFile     It represents the path to the input XML file.
      * @return              The Document object will be returned by the readXml method.
      */
-    public static Document readXmlAsDocument(String inputFile){
+    public Document readXmlAsDocument(String inputFile){
         return null;
     }//think about it
 
@@ -245,7 +245,7 @@ public class Dcon {
      * @param tagName   Represents the name of the tag to search for in the document.
      * @return          The result string can be returned by the getElementsByTag method.
      */
-    public static String getElementsByTag(Document doc, String tagName){
+    public String getElementsByTag(Document doc, String tagName){
         return null;
     }
 
@@ -254,7 +254,7 @@ public class Dcon {
      * @param obj   An object.
      * @return      The resulting string can then be returned by the convertToDconString method.
      */
-    public static String convertToDconString(Object obj) {
+    public String convertToDconString(Object obj) {
 
         return null;
     } // Needs to be looked at again. Not sure how it works.
