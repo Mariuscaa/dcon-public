@@ -29,3 +29,6 @@ hs_err_pid*
 .idea/
 .idea/*
 .idea/artifacts/DataConversionLibrary_jar.xml
+
+# .iml
+*.iml
