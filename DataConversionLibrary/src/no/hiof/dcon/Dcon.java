@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class Dcon {
     protected Dcon() {
     }
-    
+    // Methods without connection to data type.
     /**
      *  Reads a provided file and turns the result into a string.
      *  @param  filename  A string with the full name of a file. For example "file.txt"
@@ -48,25 +48,34 @@ public class Dcon {
         return 0;
     }
 
-    // Json
-
+    // Json related methods
     /**
      * Deserializes (also called decode) a file into a given class.
+     * Class and file need to have corresponding properties/keys
      * @param fileName      A string with the full name of a file. For example "file.txt"
-     * @param <className>   The name of a class that you want to convert the file into.
-     *                      Needs to have corresponding property values to the keys in the file.
+     * @param clazz         The full name of a class.
      * @return              An object of the provided class.
+     * @param <T>           The class you want to create an object of.
      */
-    public <className> Object deserializeJson(String fileName) {
+    public <T> T deserializeJsonFileToObject(String fileName, Class<T> clazz) {
         return null;
     }
+
+    /**
+     * parseJsonToDcon() is the static method that will parse the JSON string and create a Dcon object using the Dcon.parseToObject() method.
+     * @param jsonString    This represents the JSON string to be parsed into a DconObject.
+     * @return              It will return a new instance of the DconObject class.("an instance is a unique object that is created based on that blueprint")
+     */
+    public DconObject deserializeJsonStringToDconObject(String jsonString) {
+        return new DconObject();
+    } // keep
 
     /**
      * Creates a general DconObject based on a Json file.
      * @param fileName  A string with the full name of a file. For example "file.txt"
      * @return  A DconObject instance with corresponding keys and values to the contents of the file.
      */
-    public DconObject createObjectFromJson(String fileName) {
+    public DconObject deserializeJsonFileToDconObject(String fileName) {
         return null;
     }
 
@@ -75,27 +84,57 @@ public class Dcon {
      * @param fileName      The desired name of a file.
      * @param dconObject    The object you want to write to the file.
      */
-    public void writeObjectToJsonFile(String fileName, DconObject dconObject) {
-    }
 
-    public static boolean validateJson(String fileName){
-        return false;
-    }
-
+    /**
+     * Deserializes a jsonString into a DconList object.
+     * @param jsonString    The string with the json data that you want to deserialize.
+     * @return              A DconList object with the values from the json string.
+     */
     public DconList deserializeJsonToList(String jsonString) {
         return null;
     }
 
+    public void writeObjectToJsonFile(String fileName, DconObject dconObject) {
+    }
+
+    /**
+     * Validates the structure of a json file.
+     * @param fileName  The name of the file you want to validate.
+     * @return          true or false, depending on whether the file was valid or not.
+     */
+    public static boolean validateJson(String fileName){
+        return false;
+    }
+
+    /**
+     * Creates a new class based on the structure of the keys in a json string.
+     * @param className     The name of the new class which will be created.
+     * @param jsonString    A string with json data which will be used to determine the properties of the class.
+     * @return              A new class.
+     */
     public Class createClassFromJson(String className, String jsonString) {
         return null;
     }
 
     // XML
-    public String deserializeXml(String fileName, Class className) {
+
+    /**
+     * Deserializes an Xml file into an object of a corresponding class.
+     * Needs to have the same properties in both class and file.
+     * @param fileName  The name of an Xml file.
+     * @param clazz     A complete class name of an existing class. For example Person.class.
+     * @return          An object of the given class.
+     */
+    public static <T> T deserializeXmlToObject(String fileName, Class<T> clazz) {
         return null;
     }
 
-    public DconObject createObjectFromXml(String fileName) {
+    /**
+     * Creates a new DconObject based on an Xml file.
+     * @param fileName  Name of the Xml file.
+     * @return          A DconObject with the properties and values from the file.
+     */
+    public DconObject createDconObjectFromXml(String fileName) {
         return null;
     }
 
@@ -107,28 +146,29 @@ public class Dcon {
     public void writeObjectToXmlFile(String fileName, DconObject dconObject) {
     }
 
+    /**
+     * Validates the format of an XML file.
+     * @param fileName  The name of a file.
+     * @return          true or false, depending on whether the file was valid or not.
+     */
     public boolean validateXml(String fileName) {
         return false;
     }
 
-    public DconList deserializeXmlToList(String jsonString) {
+    /**
+     * Deserializes an Xml string into a DconList.
+     * @param jsonString    A string with Xml data
+     * @return              A DconList with the corresponding data.
+     */
+    public DconList deserializeXmlStringToList(String jsonString) {
         return null;
     }
 
 
-    /**
-     * parseJsonToDcon() is the static method that will parse the JSON string and create a Dcon object using the Dcon.parseToObject() method.
-     * @param jsonString    This represents the JSON string to be parsed into a DconObject.
-     * @return              It will return a new instance of the DconObject class.("an instance is a unique object that is created based on that blueprint")
-     */
-    public DconObject parseJsonStringToDconObject(String jsonString) {
-
-        return new DconObject();
-    } // keep
 
 
     /**
-     * "serializeToJSON() is the static method that will serialize the Dcon object to a JSON string using the builder.Serialize() method.
+     * serializeToJSON() is the static method that will serialize the Dcon object to a JSON string using the builder.Serialize() method.
      * @param dconObject    This represents the data to be serialized to JSON.
      * @return              It return a JSON string representation of the input object.
      */
@@ -140,7 +180,7 @@ public class Dcon {
 
 
     /**
-     * "createDconJSONList() is the static method that will create a DconJSONList object.
+     * createDconJSONList() is the static method that will create a DconJSONList object.
      * The method takes an ArrayList of String objects as a parameter.
      * @param list  An "ArrayList" that represents the list of elements to be converted to a DconList object.
      * @return      The createDconListFromArrayList method takes an ArrayList of String objects as input,
