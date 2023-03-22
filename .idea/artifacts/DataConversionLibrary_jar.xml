@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="DataConversionLibrary:jar">
-    <output-path>$PROJECT_DIR$/../Jar files</output-path>
-    <root id="archive" name="DataConversionLibrary.jar">
-      <element id="module-output" name="DataConversionLibrary" />
-    </root>
-  </artifact>
-</component>
