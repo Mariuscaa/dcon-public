@@ -70,7 +70,7 @@ public class Dcon {
      * Deserializes (also called decode) a file into a given class.
      * Class and file need to have corresponding properties/keys
      * @param fileName      A string with the full name of a file. For example "file.txt"
-     * @param clazz         The full name of a class.
+     * @param clazz         The full name of a class. For example "VideoGame.class"
      * @return              An object of the provided class.
      * @param <T>           The class you want to create an object of.
      */
@@ -78,6 +78,17 @@ public class Dcon {
         return null;
     }
 
+    /**
+     * Deserializes (also called decode) a file into a given class.
+     * Class and file need to have corresponding properties/keys
+     * @param jsonString    A string with the json data you want to deserialize.
+     * @param clazz         The full name of a class. For example "VideoGame.class".
+     * @return              An object of the provided class.
+     * @param <T>           The class you want to create an object of.
+     */
+    public <T> T deserializeJsonStringToObject(String jsonString, Class<T> clazz) {
+        return null;
+    }
 
     /**
      * parseJsonToDcon() is the static method that will parse the JSON string and create a Dcon object using the Dcon.parseToObject() method.
