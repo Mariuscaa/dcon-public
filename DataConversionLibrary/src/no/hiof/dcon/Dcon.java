@@ -15,13 +15,13 @@ public class Dcon {
      */
     protected Dcon() {
     }
-    // Methods without connection to data type.
+    // General methods. These are without connection to data type.
     /**
      *  Reads a provided file and turns the result into a string.
      *  @param  filename  A string with the full name of a file. For example "file.txt".
      *  @return           A string with the contents of the file.
      */
-    public String readFileAsString(String filename) {
+    public String readStringFromFile(String filename) {
         return null;
     }
 
@@ -41,7 +41,7 @@ public class Dcon {
      * @param filename  A string with the full name of a file. For example "file.txt"
      * @param value     The string value that shall be appended on a new line.
      */
-    public void appendFileNewLine(String filename, String value) {
+    public void appendNewLineToFile(String value, String filename) {
     }
 
     /**
@@ -74,7 +74,7 @@ public class Dcon {
      * @return              An object of the provided class.
      * @param <T>           The class you want to create an object of.
      */
-    public <T> T deserializeJsonFileToObject(String fileName, Class<T> clazz) {
+    public <T> T deserializeObjectFromJsonFile(Class<T> clazz, String fileName) {
         return null;
     }
 
@@ -86,7 +86,7 @@ public class Dcon {
      * @return              An object of the provided class.
      * @param <T>           The class you want to create an object of.
      */
-    public <T> T deserializeJsonStringToObject(String jsonString, Class<T> clazz) {
+    public <T> T deserializeObjectFromJsonString(Class<T> clazz, String jsonString) {
         return null;
     }
 
@@ -104,7 +104,7 @@ public class Dcon {
      * @param fileName  A string with the full name of a file. For example "file.txt"
      * @return  A DconObject instance with corresponding keys and values to the contents of the file.
      */
-    public DconObject deserializeJsonFileToDconObject(String fileName) {
+    public DconObject deserializeDconObjectFromJsonFile(String fileName) {
         return null;
     }
 
@@ -113,7 +113,7 @@ public class Dcon {
      * @param jsonString    The string with the json data that you want to deserialize.
      * @return              A DconList object with the values from the json string.
      */
-    public DconList deserializeJsonToList(String jsonString) {
+    public DconList deserializeDconListFromJsonString(String jsonString) {
         return null;
     }
 
@@ -123,7 +123,7 @@ public class Dcon {
      * @param filename  A string with the full name of a file. For example "file.txt"
      * @return          Return the converted DconList object.
      */
-    public DconList deserializeJsonFileToDconList(String filename){
+    public DconList deserializeDconListFromJsonFile(String filename){
         return null;
     } // keep
 
@@ -143,7 +143,7 @@ public class Dcon {
      * @param fileName  The name of the file you want to validate.
      * @return          true or false, depending on whether the file was valid or not.
      */
-    public boolean validateJson(String fileName){
+    public boolean validateJsonFile(String fileName){
         return false;
     }
 
@@ -171,7 +171,7 @@ public class Dcon {
      * @param fileName      A string with the desired name of the output file.
      * @param dconObject    It represents the type of category for which a JSON object is requested.
      */
-    public void writeDconObjectToJsonFile(String fileName, DconObject dconObject){
+    public void writeDconObjectToJsonFile(DconObject dconObject, String fileName){
     }
 
     /**
@@ -179,7 +179,7 @@ public class Dcon {
      * @param fileName  A string with the name of the file you want to create.
      * @param object    The object with the data you want to write out.
      */
-    public void writeObjectToJsonFile(String fileName, Object object){
+    public void writeObjectToJsonFile(Object object, String fileName){
     }
 
     // XML
@@ -191,7 +191,7 @@ public class Dcon {
      * @return          An object of the given class.
      * @param <T>       The class which shall be deserialized into.
      */
-    public <T> T deserializeXmlToObject(String fileName, Class<T> clazz) {
+    public <T> T deserializeObjectFromXmlFile(Class<T> clazz, String fileName) {
         return null;
     }
 
@@ -200,7 +200,7 @@ public class Dcon {
      * @param fileName  Name of the Xml file.
      * @return          A DconObject with the properties and values from the file.
      */
-    public DconObject createDconObjectFromXml(String fileName) {
+    public DconObject createDconObjectFromXmlFile(String fileName) {
         return null;
     }
 
@@ -209,7 +209,7 @@ public class Dcon {
      * @param fileName      The desired name of a file.
      * @param dconObject    The object you want to write to the file.
      */
-    public void writeObjectToXmlFile(String fileName, DconObject dconObject) {
+    public void writeObjectToXmlFile(DconObject dconObject, String fileName) {
     }
 
     /**
@@ -217,7 +217,7 @@ public class Dcon {
      * @param fileName  The name of a file.
      * @return          true or false, depending on whether the file was valid or not.
      */
-    public boolean validateXml(String fileName) {
+    public boolean validateXmlFile(String fileName) {
         return false;
     }
 
@@ -242,10 +242,10 @@ public class Dcon {
     /**
      * In this method, create a new DocumentBuilder object and use it
      * to parse the input XML file into a Document object.
-     * @param inputFile     It represents the path to the input XML file.
+     * @param fileName      It represents the path to the input XML file.
      * @return              The Document object will be returned by the readXml method.
      */
-    public Document readXmlAsDocument(String inputFile){
+    public Document readDocumentFromXmlFile(String fileName){
         return null;
     }//think about it
 
