@@ -34,11 +34,19 @@ public class DconObject {
     }
 
     /**
-     * Adds a value to a given key / property. Overwrites any existing value in the object.
-     * @param existingKeyName   The name of the key
-     * @param newValue          The value you want to put into the key.
+     * Adds a new value key and value to a DconObject instance.
+     * @param keyName   The name of the key
+     * @param newValue  The value you want to put into the key.
      */
-    public void add(String existingKeyName, String newValue) {
+    public void add(String keyName, String newValue) {
+    }
+
+    /**
+     * Changes the value of an existing key value pair. Overwrites any existing value in the object.
+     * @param keyName   The name of the key
+     * @param newValue  The value you want to put into the key.
+     */
+    public void edit(String keyName, String newValue) {
     }
 
 }
