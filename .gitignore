@@ -18,6 +18,9 @@
 *.zip
 *.tar.gz
 *.rar
+*.tmp
+*.bak
+*.swp
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
@@ -32,3 +35,23 @@ hs_err_pid*
 
 # .iml
 *.iml
+
+# Ignore Gradle project-specific cache directory
+.gradle
+
+# Ignore Gradle build output directory
+build
+
+# Gradle files
+.gradle/
+/build/
+
+settings.gradle
+
+!gradle/wrapper/gradle-wrapper.jar
+
+# Other
+.gitattributes
+
+# Ignore Gradle GUI config
+gradle-app.setting

@@ -3,7 +3,10 @@
  */
 package no.hiof.dcon;
 
+import com.google.gson.Gson;
 import org.w3c.dom.Document;
+
+import java.io.FileReader;
 import java.util.ArrayList;
 
 /**
@@ -75,7 +78,16 @@ public class Dcon {
      * @param <T>           The class you want to create an object of.
      */
     public <T> T deserializeObjectFromJsonFile(Class<T> clazz, String fileName) {
-        return null;
+        try {
+            Gson gson = new Gson();
+            FileReader reader = new FileReader(fileName);
+            T object = gson.fromJson(reader, clazz);
+            reader.close();
+            return object;
+        } catch (Exception exception) {
+            System.out.println(exception.getMessage());
+            return null;
+        }
     }
 
     /**
