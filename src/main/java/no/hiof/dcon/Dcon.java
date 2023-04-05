@@ -4,10 +4,16 @@
 package no.hiof.dcon;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import org.w3c.dom.Document;
 
-import java.io.FileReader;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 /**
  * A general class which has many methods for data conversion with both Json And Xml.
@@ -19,13 +25,21 @@ public class Dcon {
     protected Dcon() {
     }
     // General methods. These are without connection to data type.
+
     /**
      *  Reads a provided file and turns the result into a string.
      *  @param  filename  A string with the full name of a file. For example "file.txt".
      *  @return           A string with the contents of the file.
      */
     public String readStringFromFile(String filename) {
-        return null;
+        try {
+            return Files.lines(Paths.get(filename), StandardCharsets.UTF_8)
+                    .collect(Collectors.joining(System.lineSeparator()));
+        } catch (IOException e) {
+            // Handle the exception in a way that's appropriate for your library
+            System.err.println("Error reading file: " + e.getMessage());
+            return null;
+        }
     }
 
     /**
@@ -45,6 +59,17 @@ public class Dcon {
      * @param value     The string value that shall be appended on a new line.
      */
     public void appendNewLineToFile(String value, String filename) {
+        try {
+            // Check if the file exists
+            if (!Files.exists(Paths.get(filename))) {
+                System.err.println("File '" + filename + "' does not exist");
+            }
+            try (PrintWriter out = new PrintWriter(new FileWriter(filename, true))) {
+                out.println(value);
+            }
+        } catch (IOException e) {
+            System.err.println("Error appending value to file: " + e.getMessage());
+        }
     }
 
     /**
@@ -70,36 +95,30 @@ public class Dcon {
 
     // Json related methods
     /**
-     * Deserializes (also called decode) a file into a given class.
-     * Class and file need to have corresponding properties/keys
-     * @param fileName      A string with the full name of a file. For example "file.txt"
-     * @param clazz         The full name of a class. For example "VideoGame.class"
+     * Deserializes (also called decode) a JSON string or a file into a given class.
+     * Class and JSON data need to have corresponding properties/keys
+     * @param input         A string with the JSON data you want to deserialize or the name of the file.
+     * @param clazz         The full name of a class. For example "VideoGame.class".
+     * @param isFile        A boolean value indicating whether the input is a file or a JSON string. Default is false.
      * @return              An object of the provided class.
      * @param <T>           The class you want to create an object of.
      */
-    public <T> T deserializeObjectFromJsonFile(Class<T> clazz, String fileName) {
+    public <T> T objectFromJson(Class<T> clazz, String input, boolean isFile) {
         try {
-            Gson gson = new Gson();
-            FileReader reader = new FileReader(fileName);
+            Gson gson = new GsonBuilder().setLenient().create(); // Set lenient mode
+            Reader reader = isFile ? new FileReader(input) : new StringReader(input);
             T object = gson.fromJson(reader, clazz);
             reader.close();
             return object;
         } catch (Exception exception) {
-            System.out.println(exception.getMessage());
+            System.out.println("WEEWOO! " + exception.getMessage());
             return null;
         }
     }
 
-    /**
-     * Deserializes (also called decode) a file into a given class.
-     * Class and file need to have corresponding properties/keys
-     * @param jsonString    A string with the json data you want to deserialize.
-     * @param clazz         The full name of a class. For example "VideoGame.class".
-     * @return              An object of the provided class.
-     * @param <T>           The class you want to create an object of.
-     */
-    public <T> T deserializeObjectFromJsonString(Class<T> clazz, String jsonString) {
-        return null;
+    // Overloaded method with a default value for isFile
+    public <T> T objectFromJson(Class<T> clazz, String input) {
+        return objectFromJson(clazz, input, true);
     }
 
     /**
