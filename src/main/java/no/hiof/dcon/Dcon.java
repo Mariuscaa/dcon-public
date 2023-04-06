@@ -5,6 +5,8 @@ package no.hiof.dcon;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
 import org.w3c.dom.Document;
 
 import java.io.*;
@@ -111,7 +113,7 @@ public class Dcon {
             reader.close();
             return object;
         } catch (Exception exception) {
-            System.out.println("WEEWOO! " + exception.getMessage());
+            System.out.println(exception.getMessage());
             return null;
         }
     }
@@ -171,11 +173,23 @@ public class Dcon {
 
     /**
      * Validates the structure of a json file.
-     * @param fileName  The name of the file you want to validate.
-     * @return          true or false, depending on whether the file was valid or not.
+     * @param input  The input/content which you want to validate. Can be either a string or the name of a file.
+     * @return       true or false, depending on whether the input was valid or not.
      */
-    public boolean validateJsonFile(String fileName){
-        return false;
+    public boolean validateJson(String input, boolean isFile){
+        try {
+            Gson gson = new Gson();
+            Reader reader = isFile ? new FileReader(input) : new StringReader(input);
+            JsonElement jsonElement = gson.fromJson(reader, JsonElement.class);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    // Overloaded method with a default value for isFile
+    public boolean validateJson(String input) {
+        return validateJson(input, false);
     }
 
     /**
@@ -211,6 +225,15 @@ public class Dcon {
      * @param object    The object with the data you want to write out.
      */
     public void writeObjectToJsonFile(Object object, String fileName){
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        String json = gson.toJson(object);
+        try {
+            FileWriter writer = new FileWriter(fileName);
+            writer.write(json);
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     // XML
