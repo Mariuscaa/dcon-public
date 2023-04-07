@@ -25,6 +25,11 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.9'
 }
 
+java {
+    withJavadocJar()
+    withSourcesJar()
+}
+
 publishing {
     publications {
         maven(MavenPublication) {
@@ -40,6 +45,12 @@ publishing {
         maven {
             url 'file://' + "$buildDir/repo"
         }
+    }
+}
+
+javadoc {
+    if(JavaVersion.current().isJava9Compatible()) {
+        options.addBooleanOption('html5', true)
     }
 }
 
