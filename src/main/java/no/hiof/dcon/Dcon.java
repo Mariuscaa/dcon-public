@@ -22,7 +22,7 @@ import java.util.stream.Collectors;
  * <pre>
  * Dcon dcon = DconFactory.create();
  * String jsonString = dcon.readStringFromFile("test.json");
- * </pre></p>
+ * </pre>
  */
 public class Dcon {
     /**

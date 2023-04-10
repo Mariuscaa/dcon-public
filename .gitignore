@@ -47,6 +47,7 @@ build
 /build/
 
 settings.gradle
+gradle.properties
 
 !gradle/wrapper/gradle-wrapper.jar
 

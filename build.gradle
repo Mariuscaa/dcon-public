@@ -1,33 +1,40 @@
 plugins {
-    // Apply the java-library plugin for API and implementation separation.
     id 'java-library'
     id 'maven-publish'
+    id 'signing'
 }
 
-group 'no.hiof.dcon'
+group 'io.github.mariuscaa'
 version '1.0.0'
 
 repositories {
-    // Use Maven Central for resolving dependencies.
     mavenCentral()
     mavenLocal()
 }
 
 dependencies {
-    // Use JUnit Jupiter for testing.
     testImplementation 'org.junit.jupiter:junit-jupiter:5.9.1'
 
-    // This dependency is exported to consumers, that is to say found on their compile classpath.
-    api 'org.apache.commons:commons-math3:3.6.1'
-
-    // This dependency is used internally, and not exposed to consumers on their own compile classpath.
-    implementation 'com.google.guava:guava:31.1-jre'
     implementation 'com.google.code.gson:gson:2.8.9'
 }
 
 java {
     withJavadocJar()
     withSourcesJar()
+}
+
+apply plugin: 'maven-publish'
+apply plugin: 'signing'
+
+def signId = System.getenv('SIGNID')
+def signPass = System.getenv('SIGNPASS')
+
+def mavenUsername = System.getenv('JIRAUSERNAME')
+def mavenPassword = System.getenv('JIRAPASSWORD')
+
+signing {
+    sign configurations.archives
+    sign publishing.publications
 }
 
 publishing {
@@ -38,19 +45,41 @@ publishing {
             version = version
 
             from components.java
+
+            pom {
+                name = 'data-conversion-library'
+                description = 'A library for data conversion.'
+                url = 'https://github.com/Mariuscaa/dcon-public'
+                licenses {
+                    license {
+                        name = 'Apache License, Version 2.0'
+                        url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'mariusca'
+                        name = 'Marius C A'
+                        email = 'mariusca@hiof.no'
+                    }
+                }
+                scm {
+                    connection = 'scm:git:git://github.com/mariuscaa/dcon-public.git'
+                    developerConnection = 'scm:git:ssh://github.com/mariuscaa/dcon-public.git'
+                    url =  'https://github.com/mariuscaa/dcon-public/tree/main'
+                }
+            }
         }
     }
 
     repositories {
         maven {
-            url 'file://' + "$buildDir/repo"
+            url 'https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/'
+            credentials {
+                username mavenUsername
+                password mavenPassword
+            }
         }
-    }
-}
-
-javadoc {
-    if(JavaVersion.current().isJava9Compatible()) {
-        options.addBooleanOption('html5', true)
     }
 }
 
