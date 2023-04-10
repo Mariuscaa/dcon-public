@@ -43,7 +43,6 @@ public class Dcon {
             return Files.lines(Paths.get(filename), StandardCharsets.UTF_8)
                     .collect(Collectors.joining(System.lineSeparator()));
         } catch (IOException e) {
-            // Handle the exception in a way that's appropriate for your library
             System.err.println("Error reading file: " + e.getMessage());
             return null;
         }
