@@ -27,7 +27,7 @@ public class WebApi {
             return client.send(request, HttpResponse.BodyHandlers.ofString());
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
-            return null; // or throw a custom exception or handle the error accordingly
+            return null;
         }
     }
 
@@ -47,7 +47,7 @@ public class WebApi {
             return response.body();
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
-            return null; // or throw a custom exception or handle the error accordingly
+            return null; //
         }
 
 
